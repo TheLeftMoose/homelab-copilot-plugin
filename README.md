@@ -20,6 +20,12 @@ Future GitHub install after a published tag is available:
 copilot plugin install TheLeftMoose/homelab-copilot-plugin
 ```
 
+## Releases
+
+Releases are managed by release-please. Merged Conventional Commits on `main`
+open release PRs automatically, and release-please owns updates to
+`plugin.json` and `CHANGELOG.md`.
+
 ## Agents
 
 | Agent | Purpose |

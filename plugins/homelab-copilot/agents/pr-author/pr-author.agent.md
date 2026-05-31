@@ -98,22 +98,38 @@ design.
    and a `Risk tier: risk:<tier>` line (the PR template has the
    field). Use the repo's PR template — `--fill` will pick it up.
 
-   Then enable auto-merge **for `risk:trivial` and `risk:standard`
-   only** — never for `risk:sensitive`:
+   Then attempt to enable auto-merge **for `risk:trivial` and
+   `risk:standard` only** — never for `risk:sensitive`:
    ```
    gh pr merge <n> --auto --squash --delete-branch
    ```
    This squashes on green (or immediately if no required checks),
-   keeping main linear and deleting the topic branch. For
-   `risk:sensitive`, skip the auto-merge command — the user clicks
-   merge manually after review.
+   keeping main linear and deleting the topic branch.
+
+   **If auto-merge fails** with `Auto merge is not allowed for this
+   repository` (typical on private repos under the GitHub Free plan
+   — see cockpit `docs/process/risk-tiers.md` § "Auto-merge
+   availability"), do **not** retry without `--auto` and do **not**
+   self-merge. Leave the PR open and tell the user explicitly in the
+   hand-off (step 9) that they need to run:
+   ```
+   gh pr merge <n> --squash --delete-branch
+   ```
+   manually once CI is green. For `risk:sensitive`, skip the
+   auto-merge command entirely — the user clicks merge manually after
+   review.
 
 9. **Hand off.** Return the PR URL to the user. Do **not** self-merge
-   on `risk:sensitive`. For the other tiers, auto-merge will handle
-   it; tell the user the PR is set to auto-merge so they know.
-   Either way, never run `gh pr merge` *without* `--auto` — the
-   second safety net is that the merge only fires once required
-   checks (if any) pass.
+   on `risk:sensitive`. For the other tiers:
+   - If auto-merge was enabled successfully, tell the user the PR is
+     set to auto-merge so they know.
+   - If auto-merge was refused by the repo, explicitly tell the user
+     to squash-merge manually once green, and quote the exact
+     command: `gh pr merge <n> --squash --delete-branch`.
+
+   Either way, never run `gh pr merge` *without* `--auto` yourself —
+   the second safety net is that the merge only fires once required
+   checks (if any) pass, and only the human should bypass that.
 
 ## Scope-creep handling
 

@@ -48,6 +48,7 @@ open release PRs automatically, and release-please owns updates to
 | `repo-reviewer` | Generic PR review for issue alignment, GitHub Flow, risk tiers, docs, and repo conventions. |
 | `homelab-repo-reviewer` | Homelab-specific PR review for MCP architecture, IaC rules, cockpit boundaries, and service MCP conventions. |
 | `triage-camera` | Read-only diagnostic agent for the W1 camera-offline-triage workflow from the [homelab-llm](https://github.com/TheLeftMoose/homelab-llm) cockpit. Investigates HA + UniFi + Reolink MCPs and reports a verdict + one recommended action; never executes state changes. |
+| `diagnose-integration-setup` | Read-only diagnostic agent for the W3 integration-setup-failure-after-restart workflow from the [homelab-llm](https://github.com/TheLeftMoose/homelab-llm) cockpit. Investigates HA config entries stuck in `setup_retry` / `setup_error`, classifies the failure mode (transient/permanent/unknown), and renders a copy-paste reload command — but never executes it. |
 
 ## Layout
 

@@ -1,15 +1,24 @@
 {
   "name": "homelab-copilot",
   "description": "Custom Copilot CLI agents for homelab repos",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "TheLeftMoose"
   },
   "homepage": "https://github.com/TheLeftMoose/homelab-copilot-plugin",
   "repository": "https://github.com/TheLeftMoose/homelab-copilot-plugin",
   "license": "MIT",
-  "keywords": ["copilot", "agents", "github-flow", "homelab"],
+  "keywords": [
+    "copilot",
+    "agents",
+    "github-flow",
+    "homelab"
+  ],
   "category": "development",
-  "tags": ["copilot-cli", "agents", "homelab"],
+  "tags": [
+    "copilot-cli",
+    "agents",
+    "homelab"
+  ],
   "agents": "agents/"
 }

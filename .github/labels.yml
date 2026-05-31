@@ -1,0 +1,115 @@
+# Label taxonomy for homelab-copilot-plugin.
+#
+# Mirrors the homelab-llm canonical taxonomy. Apply labels manually with
+# the GitHub CLI until this repo adds an automated label-sync workflow.
+#
+# Colours follow a category scheme:
+#   type     — blue       #1f6feb
+#   area     — green      #2da44e
+#   status   — yellow     #d4a72c
+#   priority — red shades #b62324 / #d4861a / #6a737d
+#   workflow — purple     #8957e5
+#   risk     — amber      #fde68a / #f59e0b / #b45309
+
+# ── type ────────────────────────────────────────────────────────────
+- name: "type:feat"
+  color: "1f6feb"
+  description: "New feature or capability"
+- name: "type:fix"
+  color: "1f6feb"
+  description: "Bug fix"
+- name: "type:docs"
+  color: "1f6feb"
+  description: "Documentation only"
+- name: "type:chore"
+  color: "1f6feb"
+  description: "Build, tooling, repo housekeeping"
+- name: "type:refactor"
+  color: "1f6feb"
+  description: "Code/structure change with no behaviour change"
+- name: "type:adr"
+  color: "1f6feb"
+  description: "Architecture Decision Record"
+
+# ── area ────────────────────────────────────────────────────────────
+- name: "area:agents"
+  color: "2da44e"
+  description: "Custom Copilot CLI agents in agents/"
+- name: "area:mcp:ha"
+  color: "2da44e"
+  description: "Home Assistant MCP server"
+- name: "area:mcp:unifi"
+  color: "2da44e"
+  description: "UniFi / UDM MCP server"
+- name: "area:mcp:proxmox"
+  color: "2da44e"
+  description: "Proxmox MCP server"
+- name: "area:mcp:pihole"
+  color: "2da44e"
+  description: "Pi-hole MCP server"
+- name: "area:mcp:reolink"
+  color: "2da44e"
+  description: "Reolink NVR MCP server (see ADR-0005)"
+- name: "area:process"
+  color: "2da44e"
+  description: "GitHub Flow, CONTRIBUTING, templates, hooks, CI"
+- name: "area:plugin"
+  color: "2da44e"
+  description: "Copilot CLI plugin distribution"
+- name: "area:release"
+  color: "2da44e"
+  description: "Versioning, changelog, GH releases"
+- name: "area:llm"
+  color: "2da44e"
+  description: "LLM client / backend code"
+
+# ── status ──────────────────────────────────────────────────────────
+- name: "status:blocked"
+  color: "d4a72c"
+  description: "Waiting on something external or another issue"
+- name: "status:in-progress"
+  color: "d4a72c"
+  description: "Actively being worked on"
+- name: "status:needs-info"
+  color: "d4a72c"
+  description: "Needs clarification before it can proceed"
+- name: "status:needs-review"
+  color: "d4a72c"
+  description: "Implementation done, awaiting review"
+
+# ── priority ────────────────────────────────────────────────────────
+- name: "priority:high"
+  color: "b62324"
+  description: "Do next; blocks other work or fixes an active issue"
+- name: "priority:med"
+  color: "d4861a"
+  description: "Default priority"
+- name: "priority:low"
+  color: "6a737d"
+  description: "Nice to have; pick up when capacity allows"
+
+# ── workflow (diagnostic workflows from docs/roadmap.md) ────────────
+- name: "workflow:w1"
+  color: "8957e5"
+  description: "W1 — Camera offline triage"
+- name: "workflow:w2"
+  color: "8957e5"
+  description: "W2 — HA itself unhealthy"
+- name: "workflow:w3"
+  color: "8957e5"
+  description: "W3 — Integration setup failure after restart"
+- name: "workflow:w4"
+  color: "8957e5"
+  description: "W4 — Network-side anomaly"
+
+# ── risk (blast-radius driving merge autonomy) ──────────────────────
+# See docs/process/risk-tiers.md for the full framework.
+- name: "risk:trivial"
+  color: "fde68a"
+  description: "Docs/comments/no-behaviour-change. Skip pre-PR check, auto-merge on green"
+- name: "risk:standard"
+  color: "f59e0b"
+  description: "Default. Pre-PR check runs, auto-merge on green"
+- name: "risk:sensitive"
+  color: "b45309"
+  description: "Secrets/network/identity/backups/destructive. Plan + checkpoint + manual merge"

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/TheLeftMoose/homelab-copilot-plugin/compare/v1.0.0...v1.1.0) (2026-05-31)
+
+
+### Features
+
+* **agents:** add diagnose-integration-setup agent (W3 invokable) ([#13](https://github.com/TheLeftMoose/homelab-copilot-plugin/issues/13)) ([ba758ef](https://github.com/TheLeftMoose/homelab-copilot-plugin/commit/ba758ef3f425577f49536456b77f4828aaf6f9fe))
+* **agents:** add triage-camera agent ([#10](https://github.com/TheLeftMoose/homelab-copilot-plugin/issues/10)) ([aaf6f36](https://github.com/TheLeftMoose/homelab-copilot-plugin/commit/aaf6f36cbd09efa0500ddde326172a1afc999f2e))
+
+
+### Bug Fixes
+
+* **plugin:** list subfolder agent directories so pr-author / adr-keeper / mcp-bootstrap load ([#14](https://github.com/TheLeftMoose/homelab-copilot-plugin/issues/14)) ([4bacc18](https://github.com/TheLeftMoose/homelab-copilot-plugin/commit/4bacc1860ec8a7649dd930d5ba9e6560040b115e)), closes [#8](https://github.com/TheLeftMoose/homelab-copilot-plugin/issues/8)
+
+
+### Docs
+
+* **pr-author:** handle repos where auto-merge is unavailable ([#12](https://github.com/TheLeftMoose/homelab-copilot-plugin/issues/12)) ([b24f194](https://github.com/TheLeftMoose/homelab-copilot-plugin/commit/b24f1946bfa452c39f84ced23856f8af1e013551))
+
 ## [1.0.0](https://github.com/TheLeftMoose/homelab-copilot-plugin/compare/v0.3.0...v1.0.0) (2026-05-31)
 
 

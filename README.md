@@ -8,23 +8,33 @@ Design rationale and migration notes live in the cockpit repo:
 
 ## Install
 
-Local development install:
+### Recommended (marketplace flow)
+
+One-time per machine:
 
 ```shell
-copilot plugin install /home/desck/src/homelab-copilot-plugin
+copilot plugin marketplace add TheLeftMoose/homelab-copilot-plugin
 ```
 
-Future GitHub install after a published tag is available:
+Then install or update:
+
+```shell
+copilot plugin install homelab-copilot@homelab-copilot
+```
+
+### Legacy (direct repo install, deprecated by Copilot CLI)
 
 ```shell
 copilot plugin install TheLeftMoose/homelab-copilot-plugin
 ```
 
+This form will be removed in a future Copilot CLI release.
+
 ## Releases
 
 Releases are managed by release-please. Merged Conventional Commits on `main`
 open release PRs automatically, and release-please owns updates to
-`plugin.json` and `CHANGELOG.md`.
+`plugins/homelab-copilot/plugin.json`, `.github/plugin/marketplace.json`, and `CHANGELOG.md`.
 
 ## Agents
 
@@ -41,16 +51,19 @@ open release PRs automatically, and release-please owns updates to
 ## Layout
 
 ```text
-plugin.json
-agents/
-  *.agent.md
-  pr-author/
-    pr-author.agent.md
-    references/
-  adr-keeper/
-    adr-keeper.agent.md
-    references/
+.github/plugin/marketplace.json
+plugins/
+  homelab-copilot/
+    plugin.json
+    agents/
+      *.agent.md
+      pr-author/
+        pr-author.agent.md
+        references/
+      adr-keeper/
+        adr-keeper.agent.md
+        references/
 ```
 
-The manifest follows GitHub's Copilot CLI plugin reference and uses
-`plugin.json` at the repository root.
+The repository is its own Copilot CLI marketplace. The marketplace manifest
+points at the packaged plugin under `plugins/homelab-copilot/`.

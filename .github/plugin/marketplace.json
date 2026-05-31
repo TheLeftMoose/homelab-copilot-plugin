@@ -1,0 +1,18 @@
+{
+  "name": "homelab-copilot",
+  "owner": {
+    "name": "TheLeftMoose"
+  },
+  "metadata": {
+    "description": "Custom Copilot CLI agents for homelab repos",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "homelab-copilot",
+      "description": "Custom Copilot CLI agents for homelab repos",
+      "version": "0.3.0",
+      "source": "./plugins/homelab-copilot"
+    }
+  ]
+}

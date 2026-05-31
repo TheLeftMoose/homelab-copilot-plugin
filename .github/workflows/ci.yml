@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate plugin.json
-        run: jq empty plugin.json
+        run: jq empty plugins/homelab-copilot/plugin.json .github/plugin/marketplace.json
       - name: Validate agent frontmatter
         run: |
           set -euo pipefail
@@ -22,7 +22,7 @@ jobs:
               echo "::error file=$f::missing YAML frontmatter opening ---"
               fail=1
             fi
-          done < <(find agents -name '*.agent.md' -type f)
+          done < <(find plugins/homelab-copilot/agents -name '*.agent.md' -type f)
           exit $fail
 
   pr-title:

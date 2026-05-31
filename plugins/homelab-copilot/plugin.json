@@ -20,5 +20,10 @@
     "agents",
     "homelab"
   ],
-  "agents": "agents/"
+  "agents": [
+    "agents/",
+    "agents/pr-author/",
+    "agents/adr-keeper/",
+    "agents/mcp-bootstrap/"
+  ]
 }

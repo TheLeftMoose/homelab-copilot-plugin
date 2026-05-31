@@ -1,0 +1,14 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Local secrets/config
+.env
+.env.*
+!.env.example
+.mcp.json
+
+# Logs and caches
+*.log
+.cache/

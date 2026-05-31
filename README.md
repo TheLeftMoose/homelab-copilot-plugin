@@ -47,6 +47,7 @@ open release PRs automatically, and release-please owns updates to
 | `adr-keeper` | Drafts and reviews Architecture Decision Records using MADR-style conventions. |
 | `repo-reviewer` | Generic PR review for issue alignment, GitHub Flow, risk tiers, docs, and repo conventions. |
 | `homelab-repo-reviewer` | Homelab-specific PR review for MCP architecture, IaC rules, cockpit boundaries, and service MCP conventions. |
+| `triage-camera` | Read-only diagnostic agent for the W1 camera-offline-triage workflow from the [homelab-llm](https://github.com/TheLeftMoose/homelab-llm) cockpit. Investigates HA + UniFi + Reolink MCPs and reports a verdict + one recommended action; never executes state changes. |
 
 ## Layout
 
